@@ -3,12 +3,81 @@
 
 <head>
   <meta charset="utf-8">
-  <script type="text/javascript" src="js/fdb-all.min.js">
-  </script>
+  <script type="text/javascript" src="js/fdb-all.min.js"></script>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="shortcut icon" href="images/icon.png" type="image/x-icon" />
 </head>
 
 <body>
-  
+  <div class="modal fade" tabindex="-1" role="dialog" id="studentsInfo">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="studentDetail">Student Details</h4>
+        </div>
+        <div class="modal-body">
+          <p>Name: <span id="studentName"></span></p>
+          <p>Age: <span id="studentAge"></span></p>
+          <p>Gender: <span id="studentGender"></span></p>
+          <p>ID: <span id="studentID"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" tabindex="-1" role="dialog" id="editInfo">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="studentDetail">Student Details</h4>
+        </div>
+        <div class="modal-body">
+          Name: <input type="text" id="changedname"> <br></br>
+          Age: <input type="text" id="changedage"> <br></br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="savechanges">SAVE CHANGES</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  Above age: <input type="text" id="ageRestriction"></input> <input type="radio" name="searchgender" id="searchnarrower1"> MALE </input>
+  <input type="radio" name="searchgender" id="searchnarrower2"> FEMALE </input> <input type="radio" name="searchgender" id="searchnarrower3"> LGBT </input>
+  <button type="button" class="btn btn-info" id="SearchButton">SEARCH</button> <button type="button" class="btn btn-info" id="ResetButton">BACK</button><br></br><br></br>
+  Name: <input type="text" id="newstudentname"> Age: <input type="text" id="newstudentage">
+  <input type="radio" name="gender" id="gender_Male" value="Male"> MALE </input>
+  <input type="radio" name="gender" id="gender_Female" value="Female"> FEMALE </input>
+  <input type="radio" name="gender" id="gender_LGBT" value="LGBT"> LGBT </input> <br></br>
+  <button type="button" class="btn btn-primary" id="addstudentbutton">ADD STUDENT</button>
+  <table class="table table-striped">
+    <thead>
+      <br></br>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Gender</td>
+        <td>Delete</td>
+        <td>Edit</td>
+
+      </tr>
+    </thead>
+    <tbody id="studenTable">
+      <tr>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <script type="text/javascript" src="jq.js"></script>
+  <script type="text/javascript" src="bs.js"></script>
   <script type="text/javascript" src="js/db.js"></script>
 </body>
 
